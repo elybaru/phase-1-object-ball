@@ -130,3 +130,27 @@ function homeTeamName() {
 }
 console.log(homeTeamName())
 
+function numPointsScored(playerName) { 
+    const game = gameObject()
+    debugger
+    for (const gameKey in game) {
+        const teamObj = game[gameKey]
+        debugger
+        for (const teamKey in teamObj) {
+            debugger
+            const playerObj = teamObj.players
+            debugger
+            for (const playerKey in playerObj) {
+                debugger
+                if (playerKey === playerName) {
+                    debugger
+                    return playerObj[playerKey].points
+                    debugger
+                }
+            }
+        }
+    }
+
+}
+
+console.log(numPointsScored('Ben Gordon'))
