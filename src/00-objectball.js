@@ -150,12 +150,22 @@ function shoeSize(playerInput) {
     return players()[playerInput].shoe
 }
 
+
+
 function teamColors(teamInput) {
     if (teamInput === teams.teamName) {
         return teams.colors
     }
 
 }
+
+function playerNumbers(teamInput) {
+    if (teamInput === teams.teamName) {
+        return players().number
+    }
+}
+
+function playerStats
 
 
 
