@@ -2,12 +2,12 @@ function gameObject() {
     return {
         home: {
             teamName: 'Brooklyn Nets',
-            colors: ['Black','White'],
+            colors: ['Black', 'White'],
             players: {
                 'Alan Anderson': {
-                    number: 0, 
-                    shoe: 16, 
-                    points: 22, 
+                    number: 0,
+                    shoe: 16,
+                    points: 22,
                     rebounds: 12,
                     assists: 12,
                     steals: 3,
@@ -53,16 +53,17 @@ function gameObject() {
                     steals: 4,
                     blocks: 11,
                     slamDunks: 1
-            }
+                }
+            },
         },
         away: {
             teamName: 'Charlotte Hornets',
-            colors: ['Turquoise','Purple'],
+            colors: ['Turquoise', 'Purple'],
             players: {
                 'Jeff Adrien': {
-                    number: 4, 
-                    shoe: 18, 
-                    points: 10, 
+                    number: 4,
+                    shoe: 18,
+                    points: 10,
                     rebounds: 1,
                     assists: 1,
                     steals: 2,
@@ -103,7 +104,7 @@ function gameObject() {
                     number: 33,
                     shoe: 15,
                     points: 6,
-                    rebounds:12,
+                    rebounds: 12,
                     assists: 12,
                     steals: 22,
                     blocks: 5,
@@ -113,7 +114,92 @@ function gameObject() {
         }
     }
 }
+
+
+function teamNames(arr) {
+
 }
+
+// function teamColors(nameOfTeam) {
+//     const game = gameObject()
+//     for (const gameKey in game) {
+//         const teamObj = game[gameKey]
+//         for (const teamKey in teamObj) {
+//             if (teamObj.teamName === nameOfTeam) {
+//                 return teamObj.colors
+//             }
+//         }
+//     }
+// }
+
+
+function teamColors(nameOfTeam) {
+    const game = gameObject();
+    for (let gameKey in game) {
+        let teamObject = game[gameKey];
+        if (teamObject.teamName === nameOfTeam) {
+            return teamObject.colors;
+        }
+    }
+}
+
+// function teamColors(teamName) {
+//     const game = gameObject()
+//     for (const gameKey in game) {
+//         const teamObj = game[gameKey]
+//         if (teamName)
+//     }
+// }
+
+
+function numPointsScored(playerName) {
+    const game = gameObject()
+    for (const gameKey in game) {
+        const teamObj = game[gameKey]
+        debugger
+        for (const teamKey in teamObj) {
+            const playerObj = teamObj.players
+            debugger
+            for (const playerKey in playerObj) {
+                debugger
+                if (playerKey === playerName) {
+                    debugger
+                    return playerObj[playerKey].points
+                }
+            }
+        }
+    }
+
+}
+
+function shoeSize(playerName) {
+    const game = gameObject()
+    for (const gameKey in game) {
+        const teamObj = game[gameKey]
+        for (const teamKey in teamObj) {
+            const playerObj = teamObj.players
+            for (const playerKey in playerObj) {
+                if (playerKey === playerName) {
+                    return playerObj[playerKey].shoe
+                }
+            }
+        }
+    }
+
+}
+
+// let oo = { foo: 42, bar: 83, baz: 79 };
+// for (let key in oo) {
+//     let value = oo[key];
+//     console.log("key:", key, "value:", value);
+// }
+
+
+
+// console.log(shoeSize('Reggie Evans'));
+
+
+
 
 console.log(gameObject())
 
@@ -125,32 +211,11 @@ console.log(gameObject())
 
 
 
-function homeTeamName() {
-    return gameObject()['home']['teamName']
-}
-console.log(homeTeamName())
+// function homeTeamName() {
+//     return gameObject()['home']['teamName']
 
-function numPointsScored(playerName) { 
-    const game = gameObject()
-    debugger
-    for (const gameKey in game) {
-        const teamObj = game[gameKey]
-        debugger
-        for (const teamKey in teamObj) {
-            debugger
-            const playerObj = teamObj.players
-            debugger
-            for (const playerKey in playerObj) {
-                debugger
-                if (playerKey === playerName) {
-                    debugger
-                    return playerObj[playerKey].points
-                    debugger
-                }
-            }
-        }
-    }
+// console.log(homeTeamName())
 
-}
 
-console.log(numPointsScored('Ben Gordon'))
+
+// console.log(numPointsScored('Ben Gordon'))
