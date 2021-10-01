@@ -163,12 +163,28 @@ function teamNames(array) {
 }
 
 function playerNumbers(teamInput) {
-    if (teamInput === game.home.teamName) {
-        const homePlayers = game.home.players
-        for (const player in homePlayers) {
-            console.log(player.number)
+    let newArray = []
+
+    for (const gameKey in game) {
+        const teamObj = game[gameKey];
+        const playerObj = teamObj.players
+        for (const playerKey in playerObj) {
+            if (teamObj.teamName === teamInput) {
+                newArray.push([playerKey, playerObj[playerKey].number])
+            }
         }
     }
+    return newArray
+
+
+
+
+    // if (teamInput === game.home.teamName) {
+    //     const homePlayers = game.home.players
+    //     for (const player in homePlayers) {
+    //         console.log(player.number)
+    //     }
+    // }
 }
 
 function playerStats(playerInput) {
@@ -193,6 +209,7 @@ function winningTeam() {
 
 function playerWithLongestName() {
     //Which player has the longest name?
+    //
 }
 
 function doesLongNameStealATon() {
