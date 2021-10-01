@@ -132,7 +132,6 @@ function awayTeam() {
     return gameObject().away
 }
 
-
 function players() {
     const game = gameObject()
     const homePlayers = game.home.players
@@ -150,22 +149,56 @@ function shoeSize(playerInput) {
     return players()[playerInput].shoe
 }
 
-
-
 function teamColors(teamInput) {
-    if (teamInput === teams.teamName) {
-        return teams.colors
+    console.log(teamInput)
+    if (teamInput === game.home.teamName) {
+        return game.home.colors
+    } else if (teamInput === game.away.teamName) {
+        return game.away.colors
     }
-
 }
 
 function playerNumbers(teamInput) {
-    if (teamInput === teams.teamName) {
-        return players().number
+    if (teamInput === game.home.teamName) {
+        const homePlayers = game.home.players
+        for (const player in homePlayers) {
+            console.log(player.number)
+        }
     }
 }
 
-function playerStats
+function playerStats(playerInput) {
+}
+
+function bigShoeRebounds() {
+}
+
+function mostPointsScored() {
+    // Which player has the most points?
+}
+
+function winningTeam() {
+    // Which team has the most points? 
+}
+
+function playerWithLongestName() {
+    //Which player has the longest name?
+}
+
+function doesLongNameStealATon() {
+    // Write a function that returns true if the player with the longest name had the most steals. 
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
