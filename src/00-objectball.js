@@ -158,6 +158,10 @@ function teamColors(teamInput) {
     }
 }
 
+function teamNames(array) {
+    return teams.teamName
+}
+
 function playerNumbers(teamInput) {
     if (teamInput === game.home.teamName) {
         const homePlayers = game.home.players
@@ -168,6 +172,8 @@ function playerNumbers(teamInput) {
 }
 
 function playerStats(playerInput) {
+    return players()[playerInput]
+
 }
 
 function bigShoeRebounds() {
@@ -179,6 +185,10 @@ function mostPointsScored() {
 
 function winningTeam() {
     // Which team has the most points? 
+    // sum the points of each team
+    // return larger value
+    const totalPoints = (total, currentValue) => total + currentValue
+    return homePoints = homeTeam().players.points.reduce(totalPoints)
 }
 
 function playerWithLongestName() {
